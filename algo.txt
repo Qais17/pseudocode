@@ -17,7 +17,7 @@ Si actualMonth < birthMonth // on teste les mois
 
 	ALORS
 		age - age-1
-	SINON SI actualMonth -- birthMonth
+	SINON SI actualMonth -- birthMonth 1 < 12
 	
 	ALORS
 	SI actualDay < birthDay // on test les jours 
@@ -25,8 +25,57 @@ Si actualMonth < birthMonth // on teste les mois
 	age - age -1 ;
 
 	FIN SI
+FIN SI
 
+
+
+
+
+
+
+var flag = false;
+i=1;
+TANTQUE flag == false
+	si tableau [i+1]<tableau[i]
+alors
+
+	var valMin = tableau [i+1];
+	tableau[i+1] = tableau [i];
+	tableau[i] = valMin;
+	flag = false;
+SINON
+	flag = true;
+fin TANT QUE 
+
+
+exo age. 28/12/1990	01/02/1991
+12/12/2016
+28/10/1979
+
+var actualYear 
+var actualMonth
+var actualDay	
+
+var actualYear	
+var actualMonth 
+var actualDay	
+
+
+var age - actualYear - birthYear; 		91-90=1
+var month = actualMonth -1 			02 - 1 = 1
+Si actualMonth < birthMonth 			2<12
+	ALORS
+		age - age-1;			age=0
+						
+	
+
+	SINON SI actualMonth == birthMonth
+	ALORS
+		SI	actualDay - birthDay
+			ALORS		
+				age = age -1;
 	FIN SI
+FIN SI
 
 
 
@@ -34,16 +83,4 @@ Si actualMonth < birthMonth // on teste les mois
 
 
 
-var tableau = {1,7,12,16,22,42};
-var longueurDuTab = tableau.lenght;
-var findNumber = 12;
-var flag = FALSE
-var i = 0;
-TANT QUE i < longueurDuTab
-    
-    
-    SI tableau[i] == findNumber;
-        alors flag = TRUE;
-    SINON i++ 
-FIN TANT QUE
-    SI flag = TRUE on sort
+
